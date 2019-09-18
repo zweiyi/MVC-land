@@ -50,7 +50,15 @@
     [self presentViewController:alertController animated:YES completion:nil];
     
 }
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
 }
+
+//移除通知
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    NSLog(@"shan");
+}
+
 @end
